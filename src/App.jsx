@@ -187,7 +187,7 @@ export default function App() {
             <Clock className="text-white w-7 h-7" />
           </div>
           <div className="flex flex-col gap-1.5">
-            <h1 className={cn("text-2xl font-black tracking-tight text-white transition-all duration-500", THEMES[theme].glow)}>포모도로스터디</h1>
+            <h1 className={cn("text-2xl font-black tracking-tight text-white transition-all duration-500", THEMES[theme].glow)}>집중력강화 스터디</h1>
             <p className="text-slate-500 text-[10px] font-semibold italic">4회 집중 후 20분간 긴 휴식!</p>
             <div className="flex items-center gap-3 mt-1">
               <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mr-1">색 선택</span>
@@ -451,6 +451,42 @@ export default function App() {
             <button className={cn("font-bold hover:underline text-sm px-4 py-2 rounded-xl transition-colors", THEMES[theme].text)}>
               성과 공유하기
             </button>
+          </div>
+          <div className="glass rounded-[2rem] p-8 mt-8">
+            <h2 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <Clock className={cn("w-5 h-5", THEMES[theme].text)} />
+              사용 설명서 (How to use)
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className={cn("w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0", THEMES[theme].primary, "text-white")}>1</div>
+                  <p className="text-slate-300 leading-relaxed">
+                    <strong className="text-white">모드 선택:</strong> 상단의 <span className="text-white font-bold">Focus</span>(집중), <span className="text-cyan-400 font-bold">Break</span>(휴식), <span className="text-amber-400 font-bold">Long</span>(긴 휴식) 버튼을 눌러 모드를 수동으로 전환할 수 있습니다.
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <div className={cn("w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0", THEMES[theme].primary, "text-white")}>2</div>
+                  <p className="text-slate-300 leading-relaxed">
+                    <strong className="text-white">시간 설정:</strong> 25분 또는 50분 버튼을 눌러 집중 시간을 설정하세요. 정통 포모도로는 <span className="text-white font-bold">25분</span>이 기본입니다.
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <div className="flex gap-3">
+                  <div className={cn("w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0", THEMES[theme].primary, "text-white")}>3</div>
+                  <p className="text-slate-300 leading-relaxed">
+                    <strong className="text-white">4회 자동 사이클:</strong> 4회의 집중 세션을 완료하면 시스템이 자동으로 <span className="text-amber-400 font-bold">20분(또는 30분)의 긴 휴식</span>으로 안내합니다.
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <div className={cn("w-6 h-6 rounded-full flex items-center justify-center text-[10px] font-bold flex-shrink-0", THEMES[theme].primary, "text-white")}>4</div>
+                  <p className="text-slate-300 leading-relaxed">
+                    <strong className="text-white">BGM & 테마:</strong> Lo-fi 라디오를 켜고, 우측 상단의 색상 아이콘을 눌러 기분에 맞는 테마를 선택해 보세요.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>

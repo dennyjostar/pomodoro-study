@@ -1,1 +1,1 @@
-Update footer text to personal brand
+feat: Update title to '집중력강화 스터디' and add user guide section
