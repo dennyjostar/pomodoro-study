@@ -1,1 +1,1 @@
-fix: Restore og-image.jpg to reliable cozy room image
+fix: Force update OG image to correct Cozy Room photo
