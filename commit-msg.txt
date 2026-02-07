@@ -1,1 +1,1 @@
-feat: Use Unsplash image for social share preview
+fix: Download full resolution image for OG tag
