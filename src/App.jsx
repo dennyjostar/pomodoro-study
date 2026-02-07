@@ -181,71 +181,76 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 sm:p-12">
       {/* Header */}
-      <div className="w-full max-w-4xl flex items-center justify-between mb-12">
-        <div className="flex items-center gap-2">
-          <div className={cn("w-10 h-10 rounded-xl flex items-center justify-center shadow-lg transition-all duration-500", THEMES[theme].primary, THEMES[theme].glow)}>
-            <Clock className="text-white w-6 h-6" />
+      <div className="w-full max-w-4xl flex flex-col md:flex-row items-start md:items-center justify-between mb-8 gap-6">
+        <div className="flex items-center gap-4">
+          <div className={cn("w-12 h-12 rounded-2xl flex items-center justify-center shadow-lg transition-all duration-500 flex-shrink-0", THEMES[theme].primary, THEMES[theme].glow)}>
+            <Clock className="text-white w-7 h-7" />
           </div>
-          <div className="flex flex-col gap-1">
-            <h1 className={cn("text-2xl font-bold tracking-tight text-white transition-all duration-500", THEMES[theme].glow)}>포모도로스터디</h1>
-            <p className="text-slate-500 text-[10px] font-medium italic">4회 집중 후 20분간 긴 휴식!</p>
-            <div className="flex items-center gap-2 mt-1">
-              <span className="text-slate-500 text-[10px] font-bold uppercase tracking-wider mr-1">색 선택</span>
-              {Object.entries(THEMES).map(([key, t]) => (
-                <button
-                  key={key}
-                  onClick={() => setTheme(key)}
-                  className={cn(
-                    "w-4 h-4 rounded-full border border-white/20 transition-all",
-                    t.primary,
-                    theme === key ? "scale-125 border-white ring-2 ring-white/20" : "opacity-50 hover:opacity-100"
-                  )}
-                  title={t.name}
-                />
-              ))}
+          <div className="flex flex-col gap-1.5">
+            <h1 className={cn("text-2xl font-black tracking-tight text-white transition-all duration-500", THEMES[theme].glow)}>포모도로스터디</h1>
+            <p className="text-slate-500 text-[10px] font-semibold italic">4회 집중 후 20분간 긴 휴식!</p>
+            <div className="flex items-center gap-3 mt-1">
+              <span className="text-slate-500 text-[10px] font-bold uppercase tracking-widest mr-1">색 선택</span>
+              <div className="flex gap-2">
+                {Object.entries(THEMES).map(([key, t]) => (
+                  <button
+                    key={key}
+                    onClick={() => setTheme(key)}
+                    className={cn(
+                      "w-5 h-5 rounded-full border border-white/20 transition-all",
+                      t.primary,
+                      theme === key ? "scale-125 border-white ring-4 ring-white/10" : "opacity-40 hover:opacity-100"
+                    )}
+                    title={t.name}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-6">
-          <div className="flex flex-col items-end gap-2">
-            <div className="flex items-center gap-3">
-              {isMusicPlaying && (
-                <div className="flex items-end gap-0.5 h-4 mb-0.5">
-                  <div className={cn("w-0.5 rounded-full music-bar-1", THEMES[theme].primary)}></div>
-                  <div className={cn("w-0.5 rounded-full music-bar-2", THEMES[theme].primary)}></div>
-                  <div className={cn("w-0.5 rounded-full music-bar-3", THEMES[theme].primary)}></div>
-                  <div className={cn("w-0.5 rounded-full music-bar-4", THEMES[theme].primary)}></div>
-                </div>
-              )}
+
+        <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
+          <div className="flex flex-col gap-2">
+            <div className="flex items-center gap-3 bg-white/5 p-2 rounded-2xl border border-white/10">
               <button
                 onClick={toggleMusic}
                 className={cn(
-                  "flex items-center gap-2 px-4 py-2 rounded-xl transition-all border border-white/10 duration-500",
-                  isMusicPlaying ? cn(THEMES[theme].bg, THEMES[theme].text, THEMES[theme].border) : "bg-white/5 hover:bg-white/10"
+                  "flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-500",
+                  isMusicPlaying ? cn(THEMES[theme].bg, THEMES[theme].text) : "bg-white/5 hover:bg-white/10 text-slate-400"
                 )}
               >
-                {isMusicPlaying ? <Volume2 className="w-4 h-4" /> : <VolumeX className="w-4 h-4" />}
-                <span className="text-xs font-bold uppercase tracking-wider">{isMusicPlaying ? "Playing" : "BGM OFF"}</span>
+                {isMusicPlaying ? (
+                  <div className="flex items-end gap-0.5 h-3 mr-1">
+                    <div className={cn("w-0.5 rounded-full music-bar-1", THEMES[theme].primary)}></div>
+                    <div className={cn("w-0.5 rounded-full music-bar-2", THEMES[theme].primary)}></div>
+                    <div className={cn("w-0.5 rounded-full music-bar-3", THEMES[theme].primary)}></div>
+                  </div>
+                ) : <VolumeX className="w-4 h-4" />}
+                <span className="text-xs font-black uppercase tracking-widest">{isMusicPlaying ? "Playing" : "BGM OFF"}</span>
               </button>
+
+              {isMusicPlaying && (
+                <div className="flex items-center gap-3 px-2 border-l border-white/10 animate-in fade-in slide-in-from-left-2">
+                  <Volume2 className="w-3 h-3 text-slate-500" />
+                  <input
+                    type="range"
+                    min="0"
+                    max="1"
+                    step="0.01"
+                    value={volume}
+                    onChange={(e) => setVolume(parseFloat(e.target.value))}
+                    className={cn("w-16 h-1 rounded-lg appearance-none cursor-pointer accent-current", THEMES[theme].text)}
+                  />
+                </div>
+              )}
             </div>
-            {isMusicPlaying && (
-              <div className="flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-lg border border-white/5 animate-in fade-in slide-in-from-top-1">
-                <Volume2 className="w-3 h-3 text-slate-500" />
-                <input
-                  type="range"
-                  min="0"
-                  max="1"
-                  step="0.01"
-                  value={volume}
-                  onChange={(e) => setVolume(parseFloat(e.target.value))}
-                  className={cn("w-20 h-1 rounded-lg appearance-none cursor-pointer duration-500 accent-current", THEMES[theme].text)}
-                />
-              </div>
-            )}
           </div>
-          <div className="flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-            <Flame className="w-4 h-4 text-orange-500" />
-            <span className="text-sm font-medium">{cycleCount}/4 Sessions</span>
+          <div className="flex items-center gap-2 bg-white/5 px-4 py-3 rounded-2xl border border-white/10 shadow-inner">
+            <Flame className="w-5 h-5 text-orange-500 animate-pulse" />
+            <div className="flex flex-col items-start leading-none">
+              <span className="text-[10px] text-slate-500 font-bold uppercase tracking-tighter">Current Progress</span>
+              <span className="text-sm font-black text-white">{cycleCount}/4 Sessions</span>
+            </div>
           </div>
         </div>
       </div>
