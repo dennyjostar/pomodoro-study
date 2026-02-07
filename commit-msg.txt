@@ -1,1 +1,1 @@
-feat: Update social sharing description for a more public-friendly message
+feat: Add high-quality study image for social preview
