@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hotpink-50: #fff1f6;
+  --color-hotpink-100: #ffe4ed;
+  --color-hotpink-200: #ffc9de;
+  --color-hotpink-300: #ff9fc3;
+  --color-hotpink-400: #ff66a1;
+  --color-hotpink-500: #ff337f;
+  --color-hotpink-600: #f01160;
+  --color-hotpink-700: #cc0044;
+  --color-hotpink-800: #a8033b;
+  --color-hotpink-900: #8c0734;
+  --color-hotpink-950: #56001a;
+
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes music-bar {
+
+  0%,
+  100% {
+    height: 30%;
+  }
+
+  50% {
+    height: 100%;
+  }
+}
+
+.music-bar-1 {
+  animation: music-bar 0.8s ease-in-out infinite;
+  height: 60%;
+}
+
+.music-bar-2 {
+  animation: music-bar 1.2s ease-in-out infinite;
+  height: 100%;
+}
+
+.music-bar-3 {
+  animation: music-bar 0.5s ease-in-out infinite;
+  height: 40%;
+}
+
+.music-bar-4 {
+  animation: music-bar 1.0s ease-in-out infinite;
+  height: 80%;
+}
+
+@layer base {
+  body {
+    @apply bg-[#0f172a] text-slate-100 antialiased font-sans;
+    background-image: radial-gradient(circle at top center, #1e293b 0%, #0f172a 100%);
+    min-height: 100vh;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+}
+
+.hotpink-glow {
+  text-shadow: 0 0 20px rgba(255, 51, 127, 0.5);
+}
+
+.emerald-glow {
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.indigo-glow {
+  text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}

@@ -1,0 +1,19 @@
+
+> pomodoro-app@0.0.0 lint
+> eslint .
+
+
+D:\코다리초보프로젝트\pomodoro-app\src\App.jsx
+   59:10  error    'completedSessions' is assigned a value but never used. Allowed unused vars must match /^[A-Z_]/u   no-unused-vars
+  150:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  152:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  154:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  158:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  160:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  162:11  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  167:9   warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+  169:9   warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/set-state-in-effect')
+
+✖ 9 problems (1 error, 8 warnings)
+  0 errors and 8 warnings potentially fixable with the `--fix` option.
+
