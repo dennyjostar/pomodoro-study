@@ -1,1 +1,1 @@
-feat: Add test alarm button next to volume slider
+feat: Update OG meta tags for KakaoTalk preview and set title to '집중력강화 스터디'
