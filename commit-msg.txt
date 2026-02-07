@@ -1,1 +1,1 @@
-Fix: Responsive header and BGM controls for mobile
+Update footer text to personal brand

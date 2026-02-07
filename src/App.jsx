@@ -455,8 +455,8 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="mt-12 text-slate-500 text-sm font-medium">
-        Built with <span className={THEMES[theme].text}>❤️</span> by Kodari for the Visionary CEO
+      <footer className="mt-12 text-slate-500 text-sm font-medium pb-8">
+        Built with <span className={THEMES[theme].text}>❤️</span> for Denny, the Great Entrepreneur
       </footer>
     </div>
   );
