@@ -1,1 +1,1 @@
-fix: Download full resolution image for OG tag
+fix: Restore og-image.jpg to reliable cozy room image
