@@ -1,1 +1,1 @@
-feat: Update title to '집중력강화 스터디' and add user guide section
+feat: Add test alarm button next to volume slider

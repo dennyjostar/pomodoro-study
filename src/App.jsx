@@ -241,6 +241,13 @@ export default function App() {
                     onChange={(e) => setVolume(parseFloat(e.target.value))}
                     className={cn("w-16 h-1 rounded-lg appearance-none cursor-pointer accent-current", THEMES[theme].text)}
                   />
+                  <button
+                    onClick={() => playSound('focus')}
+                    className="text-[10px] bg-white/10 hover:bg-white/20 px-2 py-1 rounded text-slate-300 font-bold transition-all ml-1"
+                    title="알람 소리 테스트"
+                  >
+                    TEST 🔔
+                  </button>
                 </div>
               )}
             </div>
